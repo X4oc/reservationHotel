@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+	
+	<!--  Injection Hotel Dao -->
+	<bean id="daoHotel" class="com.groupe2.reservationHotel.daoHotel.HotelDaoImpl"></bean>
+	<bean id="serviceHotel"
+		class="com.groupe2.reservationHotel.serviceHotel.HotelServiceImpl">
+		<property name="dao" ref="daoHotel"></property>
+	</bean>
+	
+	<!--  Injection Paiement Dao -->
+	<bean id="daoPaiement" class="com.groupe2.reservationHotel.daoPaiement.PaiementDaoImpl"></bean>
+	<bean id="servicePaiement"
+		class="com.groupe2.reservationHotel.servicePaiement.PaiementServiceImpl">
+		<property name="dao" ref="daoPaiement"></property>
+	</bean>
+	
+		<!--  Injection Facture Dao -->
+	<bean id="daoFacture" class="com.groupe2.reservationHotel.daoFacture.FactureDaoImpl"></bean>
+	<bean id="serviceFacture"
+		class="com.groupe2.reservationHotel.serviceFacture.FactureServiceImpl">
+		<property name="dao" ref="daoFacture"></property>
+	</bean>
+	
+		<!--  Injection Personne Dao -->
+	<bean id="daoPersonne" class="com.groupe2.reservationHotel.daoPersonne.PersonneDaoImpl"></bean>
+	<bean id="servicePersonne"
+		class="com.groupe2.reservationHotel.servicePersonne.PersonneServiceImpl">
+		<property name="dao" ref="daoPersonne"></property>
+	</bean>
+	
+		<!--  Injection Reservation Dao -->
+	<bean id="daoReservation" class="com.groupe2.reservationHotel.daoReservation.ReservationDaoImpl"></bean>
+	<bean id="serviceReservation"
+		class="com.groupe2.reservationHotel.serviceReservation.ReservationServiceImpl">
+		<property name="dao" ref="daoClient"></property>
+	</bean>
+	
+		<!--  Injection Chambre Dao -->
+	<bean id="daoChambre" class="com.groupe2.reservationHotel.daoChambre.ChambreDaoImpl"></bean>
+	<bean id="serviceChambre"
+		class="com.groupe2.reservationHotel.serviceChambre.ChambreServiceImpl">
+		<property name="dao" ref="daoChambre"></property>
+	</bean>
+	
+		<!--  Injection Consommation Dao -->
+	<bean id="daoConsommation" class="com.groupe2.reservationHotel.daoConsommation.ConsommationDaoImpl"></bean>
+	<bean id="serviceConsommation"
+		class="com.groupe2.reservationHotel.serviceConsommation.ConsommationServiceImpl">
+		<property name="dao" ref="daoConsommation"></property>
+	</bean>
+	
+		<!--  Injection Produit Dao -->
+	<bean id="daoProduit" class="com.groupe2.reservationHotel.daoProduit.ProduitDaoImpl"></bean>
+	<bean id="serviceProduit"
+		class="com.groupe2.reservationHotel.serviceProduit.ProduitServiceImpl">
+		<property name="dao" ref="daoProduit"></property>
+	</bean>
+	
+	<bean id="datasource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost/gestionDesComptes"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value=""></property>
+	</bean>
+	<bean id="PersistenceUnitManager"
+		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+		<property name="defaultDataSource" ref="datasource"></property>
+		<property name="persistenceXmlLocations">
+			<list>
+				<value>classpath*:META-INF/persistence.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="EntityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitManager" ref="PersistenceUnitManager"></property>
+		<property name="persistenceUnitName" value="UP_ReservationHotel"></property>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="EntityManagerFactory"></property>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager"  />
+	<context:annotation-config></context:annotation-config>
+
+</beans>
