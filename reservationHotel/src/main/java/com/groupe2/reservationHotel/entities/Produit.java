@@ -35,13 +35,6 @@ public class Produit {
 	private Integer quantiteProduit;
 
 	/*
-	 * ASSOCIATIONS
-	 */
-
-	@OneToMany(mappedBy = "produit", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Consommation> listeConsommation = new ArrayList<Consommation>();
-
-	/*
 	 * GETTERS ET SETTERS
 	 */
 
@@ -83,14 +76,6 @@ public class Produit {
 
 	public void setQuantiteProduit(Integer quantiteProduit) {
 		this.quantiteProduit = quantiteProduit;
-	}
-	
-	public List<Consommation> getListeConsommation() {
-		return listeConsommation;
-	}
-
-	public void setListeConsommation(List<Consommation> listeConsommation) {
-		this.listeConsommation = listeConsommation;
 	}
 
 	/*
