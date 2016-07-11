@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 /**
  * Nom  de la classe : Chambre
  * package com.groupe2.reservationHotel.entities;
- * @author Grégoire RAYNAUD
+ * @author Grï¿½goire RAYNAUD
  * Date : 11/07/2016
  */
 @Entity
@@ -37,7 +37,7 @@ public class Chambre {
 	protected Integer nombrePiece;
 	protected Integer nombreLit;
 	@OneToMany(mappedBy= "chambre")
-	private List<Reservation> listeDesReservations;
+	private List<Reservation> listeDesReservation;
 	@ManyToOne
 	@JoinColumn(name="idHotel")
 	private Hotel hotel;
@@ -105,11 +105,11 @@ public class Chambre {
 	public void setNombreLit(Integer nombreLit) {
 		this.nombreLit = nombreLit;
 	}
-	public List<Reservation> getListeDesReservations() {
-		return listeDesReservations;
+	public List<Reservation> getListeDesReservation() {
+		return listeDesReservation;
 	}
-	public void setListeDesReservations(List<Reservation> listeDesReservations) {
-		this.listeDesReservations = listeDesReservations;
+	public void setListeDesReservations(List<Reservation> listeDesReservation) {
+		this.listeDesReservation = listeDesReservation;
 	}
 	public Hotel getHotel() {
 		return hotel;

@@ -1,5 +1,6 @@
 package com.groupe2.reservationHotel.serviceChambre;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
@@ -11,9 +12,9 @@ import com.groupe2.reservationHotel.entities.Chambre;
 import com.groupe2.reservationHotel.entities.Reservation;
 
 /**
- * Nom de la classe : ChambreServiceImpl implémente IREservationService
+ * Nom de la classe : ChambreServiceImpl implï¿½mente IREservationService
  * package com.groupe2.reservationHotel.serviceChambre;
- * @author Grégoire RAYNAUD
+ * @author Grï¿½goire RAYNAUD
  * 11/07/2016
  */
 @Transactional
@@ -26,7 +27,7 @@ public class ChambreServiceImpl implements IChambreService {
 		this.dao = dao;
 	}
 
-	//Méthodes CRUD
+	//Mï¿½thodes CRUD
 	@Override
 	public Chambre addSuite(Chambre c) {
 		// TODO Auto-generated method stub
@@ -69,16 +70,28 @@ public class ChambreServiceImpl implements IChambreService {
 		return dao.getAllChambres();
 	}
 
-	// Autres méthodes
+	// Autres mï¿½thodes
 	@Override
 	/**
-	 * Retourne true s'il n'y a aucune réservation entre les dates "dateDebut" et "dateFin"
+	 * Retourne true s'il n'y a aucune rï¿½servation entre les dates "dateDebut" et "dateFin"
 	 */
 	public boolean estDisponible(Chambre c, Date dateDebut, Date dateFin) {
 		boolean resu = true;
 		for(Reservation r:c.getListeDesReservations()){
 			resu = resu && (dateFin.getDate()<r.getDateArrivee().getDate() 
 					|| dateDebut.getDate()>r.getDateSortie().getDate());
+		}
+		return resu;
+	}
+
+	@Override
+	public List<Chambre> chambreDisponibles(Date dateDebut, Date dateFin) {
+		List<Chambre> resu = new ArrayList<Chambre>();
+		List<Chambre> listeChambres = this.getAllChambres();
+		for(Chambre c:listeChambres){
+			if(this.estDisponible(c, dateDebut, dateFin)){
+				resu.add(c);
+			}
 		}
 		return resu;
 	}

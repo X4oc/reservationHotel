@@ -9,9 +9,9 @@ import com.groupe2.reservationHotel.daoReservation.IReservationDao;
 import com.groupe2.reservationHotel.entities.Consommation;
 import com.groupe2.reservationHotel.entities.Reservation;
 /**
- * Nom de la classe : ReservationServiceImpl implémente IReservationService
+ * Nom de la classe : ReservationServiceImpl implï¿½mente IReservationService
  * package com.groupe2.reservationHotel.serviceReservation;
- * @author Grégoire RAYNAUD
+ * @author Grï¿½goire RAYNAUD
  * Date : 11/07/2016
  */
 @Transactional
@@ -26,7 +26,7 @@ public class ReservationServiceImpl implements IReservationService {
 		this.dao = dao;
 	}
 
-	//Méthodes CRUD
+	//Mï¿½thodes CRUD
 	@Override
 	public Reservation addReservation(Reservation r) {
 		// TODO Auto-generated method stub
@@ -57,7 +57,7 @@ public class ReservationServiceImpl implements IReservationService {
 		return dao.getAllReservations();
 	}
 
-	//Autres méthodes
+	//Autres mÃ©thodes
 	@Override
 	public Double calculerCoutChambre(Reservation r) {
 		Integer nombreDeNuits = r.getDateSortie().getDay()-r.getDateArrivee().getDay();
@@ -68,7 +68,7 @@ public class ReservationServiceImpl implements IReservationService {
 	public Double calculerCoutProduits(Reservation r) {
 		Double resu = (double) 0;
 		for(Consommation c: r.getListeDesConsommation()){
-			resu+=c.calculerCoutProduit();
+			resu+=calculerCoutProduit(c.getIdConsommation());
 		}
 		return resu;
 	}
