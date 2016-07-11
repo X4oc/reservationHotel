@@ -77,7 +77,7 @@ public class ChambreServiceImpl implements IChambreService {
 	 */
 	public boolean estDisponible(Chambre c, Date dateDebut, Date dateFin) {
 		boolean resu = true;
-		for(Reservation r:c.getListeDesReservations()){
+		for(Reservation r:c.getListeDesReservation()){
 			resu = resu && (dateFin.getDate()<r.getDateArrivee().getDate() 
 					|| dateDebut.getDate()>r.getDateSortie().getDate());
 		}

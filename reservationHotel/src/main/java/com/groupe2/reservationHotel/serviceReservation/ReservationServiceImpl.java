@@ -5,9 +5,11 @@ import java.util.logging.Logger;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.groupe2.reservationHotel.daoConsommation.IConsommationDao;
 import com.groupe2.reservationHotel.daoReservation.IReservationDao;
 import com.groupe2.reservationHotel.entities.Consommation;
 import com.groupe2.reservationHotel.entities.Reservation;
+import com.groupe2.reservationHotel.exceptions.RechercheConsommationException;
 /**
  * Nom de la classe : ReservationServiceImpl impl�mente IReservationService
  * package com.groupe2.reservationHotel.serviceReservation;
@@ -18,6 +20,7 @@ import com.groupe2.reservationHotel.entities.Reservation;
 public class ReservationServiceImpl implements IReservationService {
 
 	private IReservationDao dao;
+	private IConsommationDao daoConso;
 	Logger log = Logger.getLogger("ReservationServiceImpl");
 	
 	
@@ -65,16 +68,16 @@ public class ReservationServiceImpl implements IReservationService {
 	}
 
 	@Override
-	public Double calculerCoutProduits(Reservation r) {
+	public Double calculerCoutProduits(Reservation r) throws RechercheConsommationException {
 		Double resu = (double) 0;
 		for(Consommation c: r.getListeDesConsommation()){
-			resu+=calculerCoutProduit(c.getIdConsommation());
+			resu+=daoConso.calculerCoutProduit(c.getIdConsommation());
 		}
 		return resu;
 	}
 
 	@Override
-	public Double calculerCoutTotal(Reservation r) {
+	public Double calculerCoutTotal(Reservation r) throws RechercheConsommationException {
 		// TODO Auto-generated method stub
 		return (this.calculerCoutChambre(r)+this.calculerCoutProduits(r));
 	}
