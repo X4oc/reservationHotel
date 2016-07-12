@@ -1,10 +1,14 @@
 package com.groupe2.reservationHotel.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +16,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /*
  * CLASSE : PERSONNE
@@ -47,6 +52,9 @@ public class Personne {
 	@ManyToOne
 	@JoinColumn(name = "idHotel")
 	private Hotel hotel;
+
+//	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+//	private List<Consommation> consommation = new ArrayList<Consommation>();
 
 	/*
 	 * GETTERS ET SETTERS
@@ -111,6 +119,14 @@ public class Personne {
 	public Hotel getHotel() {
 		return hotel;
 	}
+
+//	public List<Consommation> getConsommation() {
+//		return consommation;
+//	}
+//
+//	public void setConsommation(List<Consommation> consommation) {
+//		this.consommation = consommation;
+//	}
 
 	public void setHotel(Hotel hotel) {
 		this.hotel = hotel;

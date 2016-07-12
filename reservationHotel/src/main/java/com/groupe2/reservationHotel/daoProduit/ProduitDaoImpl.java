@@ -60,7 +60,7 @@ public class ProduitDaoImpl implements IProduitDao {
 			throw new RechercheProduitException("Le produit " + idProduit + " n' a pas été trouvée!");
 		}
 
-		log.info("La consommation " + pdt.getIdProduit() + pdt.getNomProduit() + " a bien été trouvée!");
+		log.info("Le produit " + pdt.getIdProduit() + pdt.getNomProduit() + " a bien été trouvée!");
 		return pdt;
 	}
 

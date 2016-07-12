@@ -32,13 +32,17 @@ public class Consommation {
 	 * ASSOCIATIONS
 	 */
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "idProduit")
 	private Produit produit;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "idClient")
 	private Client client;
+	
+	@ManyToOne
+	@JoinColumn(name = "idReservation")
+	private Reservation reservation;
 
 	/*
 	 * GETTERS ET SETTERS
