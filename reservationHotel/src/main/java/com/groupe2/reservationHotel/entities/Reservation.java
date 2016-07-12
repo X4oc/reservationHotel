@@ -41,7 +41,6 @@ public class Reservation {
 	@OneToMany
 	@JoinColumn(name="idConsommation")
 	private List<Consommation> listeDesConsommation;
-	
 	//Constructeurs
 	public Reservation() {
 		super();

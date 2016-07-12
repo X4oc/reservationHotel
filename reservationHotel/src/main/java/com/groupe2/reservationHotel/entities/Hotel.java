@@ -15,6 +15,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 
@@ -35,7 +36,8 @@ public class Hotel {
 	private String adresseMail;
 	
 	/* associations */
-	@OneToMany (mappedBy = "hotel", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToMany
+	@JoinColumn(name="idFacture")
 	private List<Facture> factures;
 	
 	@OneToMany (mappedBy = "hotel", fetch=FetchType.LAZY, cascade=CascadeType.ALL)

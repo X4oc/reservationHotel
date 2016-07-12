@@ -38,7 +38,7 @@
 	<bean id="daoReservation" class="com.groupe2.reservationHotel.daoReservation.ReservationDaoImpl"></bean>
 	<bean id="serviceReservation"
 		class="com.groupe2.reservationHotel.serviceReservation.ReservationServiceImpl">
-		<property name="dao" ref="daoClient"></property>
+		<property name="dao" ref="daoReservation"></property>
 	</bean>
 	
 		<!--  Injection Chambre Dao -->
@@ -65,7 +65,7 @@
 	<bean id="datasource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost/gestionDesComptes"></property>
+		<property name="url" value="jdbc:mysql://localhost/reservationHotel"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value=""></property>
 	</bean>

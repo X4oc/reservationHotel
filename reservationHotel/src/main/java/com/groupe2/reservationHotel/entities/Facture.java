@@ -37,7 +37,8 @@ public class Facture {
 	
 	private Double tva;
 	
-	@OneToMany (mappedBy = "facture", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToMany
+	@JoinColumn(name="idReservation")
 	private List<Reservation> reservations;
 	
 	/* constructeur par defaut */
