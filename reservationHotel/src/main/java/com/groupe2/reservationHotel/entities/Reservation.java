@@ -31,12 +31,13 @@ public class Reservation {
 	@Temporal(TemporalType.DATE)
 	private Date dateSortie;
 	@ManyToOne
-	@JoinColumn(name="listeDesReservations")
+	@JoinColumn(name="listeDesReservation")
 	private Chambre chambre;
 	@ManyToOne
 	@JoinColumn(name="listeDesReservations")
 	private Client client;
-	@OneToMany (mappedBy="reservation")
+	@OneToMany
+	@JoinColumn(name="idConsommation")
 	private List<Consommation> listeDesConsommation;
 	
 	//Constructeurs
