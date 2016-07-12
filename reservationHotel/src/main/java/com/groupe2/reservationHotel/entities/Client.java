@@ -38,7 +38,7 @@ public class Client extends Personne {
 	 * ASSOCIATIONS
 	 */
 
-	@OneToMany(mappedBy = "listeDesReservationClient", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Reservation> reservation = new ArrayList<Reservation>();
 
 	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
