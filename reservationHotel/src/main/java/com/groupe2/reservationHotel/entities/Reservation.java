@@ -30,11 +30,13 @@ public class Reservation {
 	private Date dateArrivee;
 	@Temporal(TemporalType.DATE)
 	private Date dateSortie;
+	
+	//Associations
 	@ManyToOne
-	@JoinColumn(name="listeDesReservationChambre")
+	@JoinColumn(name="ID_CHAMBRE")
 	private Chambre chambre;
 	@ManyToOne
-	@JoinColumn(name="listeDesReservationClient")
+	@JoinColumn(name="ID_CLIENT")
 	private Client client;
 	@OneToMany
 	@JoinColumn(name="idConsommation")

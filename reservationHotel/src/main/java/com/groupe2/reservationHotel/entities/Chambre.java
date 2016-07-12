@@ -36,7 +36,9 @@ public class Chambre {
 	private Integer etage;
 	protected Integer nombrePiece;
 	protected Integer nombreLit;
-	@OneToMany(mappedBy= "listeDesReservationChambre")
+	
+	//Associations
+	@OneToMany(mappedBy= "chambre")
 	private List<Reservation> listeDesReservation;
 	@ManyToOne
 	@JoinColumn(name="idHotel")
@@ -108,7 +110,7 @@ public class Chambre {
 	public List<Reservation> getListeDesReservation() {
 		return listeDesReservation;
 	}
-	public void setListeDesReservations(List<Reservation> listeDesReservation) {
+	public void setListeDesReservation(List<Reservation> listeDesReservation) {
 		this.listeDesReservation = listeDesReservation;
 	}
 	public Hotel getHotel() {
