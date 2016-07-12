@@ -7,18 +7,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.groupe2.reservationHotel.entities.Hotel;
-import com.groupe2.reservationHotel.serviceHotel.IHotelService;
+import com.groupe2.reservationHotel.servicePaiement.IPaiementService;
 
-public class HotelTestU {
+public class PaiementTestU {
 
 	private static ClassPathXmlApplicationContext context;
-	private static IHotelService service;
+	private static IPaiementService service;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	    context =  new ClassPathXmlApplicationContext("app.xml");
-	    service = (IHotelService) context.getBean("serviceHotel");
+	    service = (IPaiementService) context.getBean("servicePaiement");
 	}
 
 	@AfterClass
@@ -32,29 +31,27 @@ public class HotelTestU {
 	}
 */
 	@Test
-	public void testAddHotel() {
-		Hotel hotel1 = new Hotel("nomHotel1", "adrHotel1", 2, "numeroTelephone1", "numeroFax1", "codePostal1", "pays1", "adresseMail1");
-		service.addHotel(hotel1);
-		assertNotNull(hotel1.getIdHotel());
+	public void testAddPaiement() {
+		fail("Not yet implemented");
 	}
 /*
 	@Test
-	public void testDeleteHotel() {
+	public void testDeletePaiement() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testUpdateHotel() {
+	public void testUpdatePaiement() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetHotels() {
+	public void testGetPaiement() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetHotel() {
+	public void testGetPaiements() {
 		fail("Not yet implemented");
 	}
 */
