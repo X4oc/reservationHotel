@@ -14,7 +14,7 @@ import com.groupe2.reservationHotel.exceptions.RechercheConsommationException;
 /**
  * Nom de la classe : ReservationServiceImpl implemente IReservationService
  * package com.groupe2.reservationHotel.serviceReservation;
- * @author Gr�goire RAYNAUD
+ * @author Gregoire RAYNAUD
  * Date : 11/07/2016
  */
 @Transactional
