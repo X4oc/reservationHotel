@@ -99,7 +99,7 @@ public class PersonneDaoImpl implements IPersonneDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Personne> getPersonneByMc(String mc) {
-		Query req = em.createQuery("fron Personne p where p.nomPersonne like:s");
+		Query req = em.createQuery("from Personne p where p.nomPersonne like:s");
 		req.setParameter("s", "%" + mc + "%");
 		log.info("Il existe " + req.getResultList().size() + " personne(s) par mots clés : " + mc);
 		return req.getResultList();
