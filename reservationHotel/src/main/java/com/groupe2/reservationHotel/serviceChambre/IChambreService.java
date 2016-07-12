@@ -13,7 +13,7 @@ import com.groupe2.reservationHotel.entities.Chambre;
  */
 public interface IChambreService {
 
-	//M�thodes CRUD
+	//Methodes CRUD
 		public Chambre addSuite(Chambre c);
 		public Chambre addSimple(Chambre c);
 		public Chambre addDoubles (Chambre c);
@@ -22,7 +22,7 @@ public interface IChambreService {
 		public Chambre getChambreById(Long idChambre);
 		public List<Chambre> getAllChambres();
 		
-	//Autres m�thodes
+	//Autres methodes
 		public boolean estDisponible (Chambre c, Date dateDebut, Date dateFin);
 		public List<Chambre> chambreDisponibles(Date dateDebut, Date dateFin);
 }

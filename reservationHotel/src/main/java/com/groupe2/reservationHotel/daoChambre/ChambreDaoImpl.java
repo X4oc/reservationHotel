@@ -13,9 +13,9 @@ import com.groupe2.reservationHotel.entities.Simple;
 import com.groupe2.reservationHotel.entities.Suite;
 
 /**
- * Nom de la classe : ChambreDaoImpl implémente IChambreDao
+ * Nom de la classe : ChambreDaoImpl implemente IChambreDao
  * package com.groupe2.reservationHotel.daoChambre;
- * @author Grégoire RAYNAUD
+ * @author Gregoire RAYNAUD
  * Date 11/07/2016
  */
 public class ChambreDaoImpl implements IChambreDao{
@@ -27,28 +27,28 @@ public class ChambreDaoImpl implements IChambreDao{
 	@Override
 	public Chambre addSuite(Chambre c) {
 		em.persist(c);
-		log.info("La chambre n°"+c.getNumeroChambre()+" a bien été ajoutée");
+		log.info("La chambre nï¿½"+c.getNumeroChambre()+" a bien ï¿½tï¿½ ajoutï¿½e");
 		return c;
 	}
 
 	@Override
 	public Chambre addSimple(Chambre c) {
 		em.persist(c);
-		log.info("La chambre n°"+c.getNumeroChambre()+" a bien été ajoutée");
+		log.info("La chambre nï¿½"+c.getNumeroChambre()+" a bien ï¿½tï¿½ ajoutï¿½e");
 		return c;
 	}
 
 	@Override
 	public Chambre addDoubles(Chambre c) {
 		em.persist(c);
-		log.info("La chambre n°"+c.getNumeroChambre()+" a bien été ajoutée");
+		log.info("La chambre nï¿½"+c.getNumeroChambre()+" a bien ï¿½tï¿½ ajoutï¿½e");
 		return c;
 	}
 
 	@Override
 	public Chambre updateChambre(Chambre c) {
 		em.merge(c);
-		log.info("La chambre n°"+c.getNumeroChambre()+" a bien été modifiée");
+		log.info("La chambre nï¿½"+c.getNumeroChambre()+" a bien ï¿½tï¿½ modifiï¿½e");
 		return c;
 	}
 	
@@ -56,14 +56,14 @@ public class ChambreDaoImpl implements IChambreDao{
 	public Chambre deleteChambre(Long idChambre) {
 		Chambre c = em.find(Chambre.class, idChambre);
 		em.remove(c);
-		log.info("La chambre n°"+c.getNumeroChambre()+" a bien été supprimée");
+		log.info("La chambre nï¿½"+c.getNumeroChambre()+" a bien ï¿½tï¿½ supprimï¿½e");
 		return c;
 	}
 
 	@Override
 	public Chambre getChambreById(Long idChambre) {
 		Chambre c = em.find(Chambre.class, idChambre);
-		log.info("La chambre n°"+c.getNumeroChambre()+" a bien été trouvée");
+		log.info("La chambre nï¿½"+c.getNumeroChambre()+" a bien ï¿½tï¿½ trouvï¿½e");
 		return c;
 	}
 
@@ -71,7 +71,7 @@ public class ChambreDaoImpl implements IChambreDao{
 	@Override
 	public List<Chambre> getAllChambres() {
 		Query query = em.createQuery("from Chambre");
-		log.info("La liste de chambres a bien été trouvée");
+		log.info("La liste de chambres a bien ï¿½tï¿½ trouvï¿½e");
 		return query.getResultList();
 	}
 	

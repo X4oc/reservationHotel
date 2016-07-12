@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 /**
  * Nom  de la classe : Chambre
  * package com.groupe2.reservationHotel.entities;
- * @author Gr�goire RAYNAUD
+ * @author Gregoire RAYNAUD
  * Date : 11/07/2016
  */
 @Entity

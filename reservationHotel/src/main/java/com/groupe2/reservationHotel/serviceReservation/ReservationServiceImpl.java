@@ -3,6 +3,7 @@ package com.groupe2.reservationHotel.serviceReservation;
 import java.util.List;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.groupe2.reservationHotel.daoConsommation.IConsommationDao;
@@ -11,7 +12,7 @@ import com.groupe2.reservationHotel.entities.Consommation;
 import com.groupe2.reservationHotel.entities.Reservation;
 import com.groupe2.reservationHotel.exceptions.RechercheConsommationException;
 /**
- * Nom de la classe : ReservationServiceImpl impl�mente IReservationService
+ * Nom de la classe : ReservationServiceImpl implemente IReservationService
  * package com.groupe2.reservationHotel.serviceReservation;
  * @author Gr�goire RAYNAUD
  * Date : 11/07/2016
@@ -20,6 +21,7 @@ import com.groupe2.reservationHotel.exceptions.RechercheConsommationException;
 public class ReservationServiceImpl implements IReservationService {
 
 	private IReservationDao dao;
+	@Autowired
 	private IConsommationDao daoConso;
 	Logger log = Logger.getLogger("ReservationServiceImpl");
 	
@@ -29,11 +31,12 @@ public class ReservationServiceImpl implements IReservationService {
 		this.dao = dao;
 	}
 
-	//M�thodes CRUD
+	//Methodes CRUD
+	
 	@Override
-	public Reservation addReservation(Reservation r) {
+	public Reservation addReservation(Reservation r, Long idChambre) {
 		// TODO Auto-generated method stub
-		return dao.addReservation(r);
+		return dao.addReservation(r, idChambre);
 	}
 
 	@Override
@@ -60,7 +63,7 @@ public class ReservationServiceImpl implements IReservationService {
 		return dao.getAllReservations();
 	}
 
-	//Autres méthodes
+	//Autres methodes
 	@Override
 	public Double calculerCoutChambre(Reservation r) {
 		Integer nombreDeNuits = r.getDateSortie().getDay()-r.getDateArrivee().getDay();

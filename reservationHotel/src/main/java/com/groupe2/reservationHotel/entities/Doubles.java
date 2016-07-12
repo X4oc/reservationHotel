@@ -4,9 +4,9 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Nom  de la classe : Double hérite de Chambre
+ * Nom  de la classe : Double hï¿½rite de Chambre
  * package com.groupe2.reservationHotel.entities;
- * @author Grégoire RAYNAUD
+ * @author Gregoire RAYNAUD
  * Date : 11/07/2016
  */
 @Entity

@@ -12,9 +12,9 @@ import com.groupe2.reservationHotel.entities.Chambre;
 import com.groupe2.reservationHotel.entities.Reservation;
 
 /**
- * Nom de la classe : ChambreServiceImpl impl�mente IREservationService
+ * Nom de la classe : ChambreServiceImpl implemente IREservationService
  * package com.groupe2.reservationHotel.serviceChambre;
- * @author Gr�goire RAYNAUD
+ * @author Gregoire RAYNAUD
  * 11/07/2016
  */
 @Transactional
@@ -27,7 +27,7 @@ public class ChambreServiceImpl implements IChambreService {
 		this.dao = dao;
 	}
 
-	//M�thodes CRUD
+	//Methodes CRUD
 	@Override
 	public Chambre addSuite(Chambre c) {
 		// TODO Auto-generated method stub
@@ -70,7 +70,7 @@ public class ChambreServiceImpl implements IChambreService {
 		return dao.getAllChambres();
 	}
 
-	// Autres m�thodes
+	// Autres methodes
 	@Override
 	/**
 	 * Retourne true s'il n'y a aucune r�servation entre les dates "dateDebut" et "dateFin"
