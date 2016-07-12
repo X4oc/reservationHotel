@@ -13,7 +13,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
+/**
+ * Nom de la classe : Reservation
+ * package com.groupe2.reservationHotel.entities;
+ * @author Gregoire RAYNAUD
+ * DAte : 11/07/2016
+ */
 @Entity
 public class Reservation {
 
