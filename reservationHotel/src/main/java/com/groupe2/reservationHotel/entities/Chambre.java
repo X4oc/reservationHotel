@@ -36,7 +36,7 @@ public class Chambre {
 	private Integer etage;
 	protected Integer nombrePiece;
 	protected Integer nombreLit;
-	@OneToMany(mappedBy= "chambre")
+	@OneToMany(mappedBy= "listeDesReservationChambre")
 	private List<Reservation> listeDesReservation;
 	@ManyToOne
 	@JoinColumn(name="idHotel")
