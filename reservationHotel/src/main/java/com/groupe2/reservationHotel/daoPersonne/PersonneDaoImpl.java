@@ -9,6 +9,8 @@ import javax.persistence.Query;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.groupe2.reservationHotel.entities.Client;
+import com.groupe2.reservationHotel.entities.Employe;
 import com.groupe2.reservationHotel.entities.Hotel;
 import com.groupe2.reservationHotel.entities.Personne;
 import com.groupe2.reservationHotel.exceptions.RechercheHotelException;
@@ -139,6 +141,74 @@ public class PersonneDaoImpl implements IPersonneDao {
 		em.remove(p);
 		log.info("La personne " + p.getIdPersonne() + p.getNomPersonne() + " a bien été supprimée!");
 		return p;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.groupe2.reservationHotel.daoPersonne.IPersonneDao#getClientId(java.
+	 * lang.Long)
+	 */
+
+	@Override
+	public Client getClientId(Long idClient) throws Exception {
+		Client cl = em.find(Client.class, idClient);
+
+		if (cl == null) {
+			throw new RecherchePersonneException("Le client " + idClient + " n'a pas été trouvée!");
+		}
+
+		log.info("Le client " + cl.getIdPersonne() + cl.getNomPersonne() + " a bien été trouvée!");
+		return cl;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.groupe2.reservationHotel.daoPersonne.IPersonneDao#getClient()
+	 */
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Client> getClient() {
+		Query req = em.createQuery("from Client");
+		log.info("La liste des clients est de : " + req.getResultList().size() + " clients.");
+		return req.getResultList();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.groupe2.reservationHotel.daoPersonne.IPersonneDao#getEmployeId(java.
+	 * lang.Long)
+	 */
+
+	@Override
+	public Employe getEmployeId(Long idEmploye) throws Exception {
+		Employe empl = em.find(Employe.class, idEmploye);
+
+		if (empl == null) {
+			throw new RecherchePersonneException("L'employé " + idEmploye + " n'a pas été trouvée!");
+		}
+
+		log.info("L'employé " + empl.getIdPersonne() + empl.getNomPersonne() + " a bien été trouvée!");
+		return empl;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.groupe2.reservationHotel.daoPersonne.IPersonneDao#getEmploye()
+	 */
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Employe> getEmploye() {
+		Query req = em.createQuery("from Employe");
+		log.info("La liste des employés est de : " + req.getResultList().size() + " d'employés.");
+		return req.getResultList();
 	}
 
 }

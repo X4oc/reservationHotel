@@ -6,6 +6,8 @@ import java.util.logging.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.groupe2.reservationHotel.daoPersonne.IPersonneDao;
+import com.groupe2.reservationHotel.entities.Client;
+import com.groupe2.reservationHotel.entities.Employe;
 import com.groupe2.reservationHotel.entities.Personne;
 import com.groupe2.reservationHotel.exceptions.RechercheHotelException;
 import com.groupe2.reservationHotel.exceptions.RecherchePersonneException;
@@ -112,6 +114,56 @@ public class PersonneServiceImpl implements IPersonneService {
 	@Override
 	public Personne deletePersonne(Long idPersonne) throws RecherchePersonneException {
 		return this.dao.deletePersonne(idPersonne);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.groupe2.reservationHotel.servicePersonne.IPersonneService#getClientId
+	 * (java.lang.Long)
+	 */
+
+	@Override
+	public Client getClientId(Long idClient) throws Exception {
+		return this.dao.getClientId(idClient);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.groupe2.reservationHotel.servicePersonne.IPersonneService#getClient()
+	 */
+
+	@Override
+	public List<Client> getClient() {
+		return this.dao.getClient();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.groupe2.reservationHotel.servicePersonne.IPersonneService#
+	 * getEmployeId(java.lang.Long)
+	 */
+
+	@Override
+	public Employe getEmployeId(Long idEmploye) throws Exception {
+		return this.dao.getEmployeId(idEmploye);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.groupe2.reservationHotel.servicePersonne.IPersonneService#getEmploye(
+	 * )
+	 */
+
+	@Override
+	public List<Employe> getEmploye() {
+		return this.dao.getEmploye();
 	}
 
 }

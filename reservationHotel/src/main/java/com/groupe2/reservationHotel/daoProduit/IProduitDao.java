@@ -23,5 +23,7 @@ public interface IProduitDao {
 	public Produit updateProduit (Produit pdt);
 	
 	public Produit deleteProduit (Long idProduit) throws RechercheProduitException;
+	
+	public void getProduitsStock();
 
 }

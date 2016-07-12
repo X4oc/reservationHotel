@@ -1,5 +1,7 @@
 package com.groupe2.reservationHotel;
 
+import static org.junit.Assert.*;
+
 import java.util.Date;
 
 import org.apache.log4j.Logger;
@@ -67,10 +69,10 @@ public class PersonneTestU {
 				"012901006", new Date(), 1, 0.);
 		Client c4 = new Client("Rouget4", "Bernard", new Date(), "avenue des jambons", "bernardrouget@yahoo.fr",
 				"012901006", new Date(), 1, 0.);
-		logger.info(c1.toString());
-		logger.info(c2.toString());
-		logger.info(c3.toString());
-		logger.info(c4.toString());
+//		logger.info(c1.toString());
+//		logger.info(c2.toString());
+//		logger.info(c3.toString());
+//		logger.info(c4.toString());
 		service.addPersonne(c1, 1L);
 		service.addPersonne(c2, 1L);
 		service.addPersonne(c3, 1L);
@@ -78,8 +80,12 @@ public class PersonneTestU {
 		// assertNotNull(service.getPersonneId(2L));
 		// assertNotNull(service.getPersonneId(3L));
 
-		// Employe ep1 = new Employe("Cook", "Tim", new Date(), "Silicon
-		// Valley", "timcook@apple.com", "0989", new Date(), 25000.0);
+		 Employe ep1 = new Employe("Cook", "Tim1", new Date(), "Silicon Valley", "timcook@apple.com", "09895", new Date(), 25000.0);
+		 Employe ep2 = new Employe("Cook", "Tim2", new Date(), "Silicon Valley", "timcook@apple.com", "09896", new Date(), 25000.0);
+		 Employe ep3 = new Employe("Cook", "Tim3", new Date(), "Silicon Valley", "timcook@apple.com", "0987", new Date(), 25000.0);
+		 service.addPersonne(ep1, 1L);
+		 service.addPersonne(ep2, 1L);
+		 service.addPersonne(ep3, 1L);
 		// logger.info(ep1.toString());
 		// service.addPersonne(ep1, 1L);
 		// assertNotNull(service.getPersonneId(4L));
@@ -97,6 +103,21 @@ public class PersonneTestU {
 		// logger.info(san1.toString());
 		// service.addPersonne(san1, 1L);
 		// assertNotNull(service.getPersonneId(6L));
+	}
+
+	// @Test
+	// public void testGetPersonneId() throws Exception {
+	// assertNotNull(service.getPersonneId(1L));
+	// }
+
+	@Test
+	public void testGetClient() throws Exception {
+		assertNotNull(service.getClient());
+	}
+	
+	@Test
+	public void testGetEmploye() throws Exception {
+		assertNotNull(service.getEmploye());
 	}
 
 	// @Test
