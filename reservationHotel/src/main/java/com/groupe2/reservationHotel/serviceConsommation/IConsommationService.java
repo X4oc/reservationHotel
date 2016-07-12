@@ -14,7 +14,7 @@ import com.groupe2.reservationHotel.exceptions.RechercheConsommationException;
 
 public interface IConsommationService {
 
-	public Consommation addConsommation(Consommation cn);
+	public Consommation addConsommation(Consommation cn) throws RechercheConsommationException;
 
 	public Consommation getConsommationId(Long idConsommation) throws RechercheConsommationException;
 

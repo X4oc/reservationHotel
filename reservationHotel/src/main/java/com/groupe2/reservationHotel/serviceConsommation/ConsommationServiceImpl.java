@@ -48,7 +48,7 @@ public class ConsommationServiceImpl implements IConsommationService {
 	 */
 
 	@Override
-	public Consommation addConsommation(Consommation cn) {
+	public Consommation addConsommation(Consommation cn) throws RechercheConsommationException {
 		return this.dao.addConsommation(cn);
 	}
 

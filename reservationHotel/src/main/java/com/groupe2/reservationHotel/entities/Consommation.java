@@ -84,9 +84,11 @@ public class Consommation {
 		super();
 	}
 
-	public Consommation(Integer quantiteConsommation) {
+	public Consommation(Integer quantiteConsommation, Produit produit, Client client) {
 		super();
 		this.quantiteConsommation = quantiteConsommation;
+		this.produit = produit;
+		this.client = client;
 	}
 
 	/*

@@ -39,9 +39,20 @@ public class ConsommationDaoImpl implements IConsommationDao {
 	 */
 
 	@Override
-	public Consommation addConsommation(Consommation cn) {
+	public Consommation addConsommation(Consommation cn) throws RechercheConsommationException {
+
+		int stock = cn.getProduit().getQuantiteProduit();
+		int qqte = cn.getQuantiteConsommation();
+
+		if (qqte > stock) {
+			throw new RechercheConsommationException(
+					"Il n' y a plus de stock de ce produit : " + cn.getProduit().getNomProduit());
+		}
+
 		em.persist(cn);
-		log.info("La consommation " + cn.getIdConsommation() + " a bien été crée");
+		cn.getProduit().setQuantiteProduit(stock - qqte);
+		log.info("La consommation " + cn.getQuantiteConsommation() + cn.getProduit().getNomProduit()
+				+ " a bien été crée");
 		return cn;
 	}
 

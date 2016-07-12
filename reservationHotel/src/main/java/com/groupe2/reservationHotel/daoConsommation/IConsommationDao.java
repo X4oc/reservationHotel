@@ -18,7 +18,7 @@ public interface IConsommationDao {
 	 * CRUD
 	 */
 
-	public Consommation addConsommation(Consommation cn);
+	public Consommation addConsommation(Consommation cn) throws RechercheConsommationException;
 
 	public Consommation getConsommationId(Long idConsommation) throws RechercheConsommationException;
 
