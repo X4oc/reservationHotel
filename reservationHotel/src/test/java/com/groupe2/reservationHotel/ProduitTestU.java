@@ -46,25 +46,25 @@ public class ProduitTestU {
 	 * TESTS UNITAIRES
 	 */
 
-//	@Test
-//	public void testAddProduit() throws Exception {
-//		Produit pdt1 = new Produit(1.05, "Pain au chocolat", "1", 40);
-//		Produit pdt2 = new Produit(.95, "Croissants", "2", 30);
-//		Produit pdt3 = new Produit(1.40, "Café allongé", "3", 100);
-//		Produit pdt4 = new Produit(1.20, "Expresso", "4", 200);
-//		logger.info(pdt1.toString());
-//		logger.info(pdt2.toString());
-//		logger.info(pdt3.toString());
-//		logger.info(pdt4.toString());
-//		service.addProduit(pdt1);
-//		service.addProduit(pdt2);
-//		service.addProduit(pdt3);
-//		service.addProduit(pdt4);
-//		assertNotNull(service.getProduitId(1L));
-//		assertNotNull(service.getProduitId(2L));
-//		assertNotNull(service.getProduitId(3L));
-//		assertNotNull(service.getProduitId(4L));
-//	}
+	@Test
+	public void testAddProduit() throws Exception {
+		Produit pdt1 = new Produit(1.05, "Pain au chocolat", "1", 40);
+		Produit pdt2 = new Produit(.95, "Croissants", "2", 30);
+		Produit pdt3 = new Produit(1.40, "Café allongé", "3", 100);
+		Produit pdt4 = new Produit(1.20, "Expresso", "4", 200);
+		logger.info(pdt1.toString());
+		logger.info(pdt2.toString());
+		logger.info(pdt3.toString());
+		logger.info(pdt4.toString());
+		service.addProduit(pdt1);
+		service.addProduit(pdt2);
+		service.addProduit(pdt3);
+		service.addProduit(pdt4);
+		assertNotNull(service.getProduitId(1L));
+		assertNotNull(service.getProduitId(2L));
+		assertNotNull(service.getProduitId(3L));
+		assertNotNull(service.getProduitId(4L));
+	}
 
 //	@Test
 //	public void testGetProduitId() throws Exception {
