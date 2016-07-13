@@ -114,17 +114,4 @@ public class ProduitDaoImpl implements IProduitDao {
 		return pdt;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.groupe2.reservationHotel.daoProduit.IProduitDao#getProduitsStock()
-	 */
-
-	@Override
-	public void getProduitsStock() {
-		// TODO Auto-generated method stub
-
-	}
-
 }

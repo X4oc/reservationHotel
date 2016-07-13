@@ -13,17 +13,15 @@ import com.groupe2.reservationHotel.exceptions.RechercheProduitException;
  */
 
 public interface IProduitDao {
-	
+
 	public Produit addProduit(Produit pdt);
-	
+
 	public Produit getProduitId(Long idProduit) throws RechercheProduitException;
-	
+
 	public List<Produit> getProduit();
-	
-	public Produit updateProduit (Produit pdt);
-	
-	public Produit deleteProduit (Long idProduit) throws RechercheProduitException;
-	
-	public void getProduitsStock();
+
+	public Produit updateProduit(Produit pdt);
+
+	public Produit deleteProduit(Long idProduit) throws RechercheProduitException;
 
 }

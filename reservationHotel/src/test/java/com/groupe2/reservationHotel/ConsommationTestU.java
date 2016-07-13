@@ -54,25 +54,25 @@ public class ConsommationTestU {
 	 * TESTS UNITAIRES
 	 */
 
-	//	@Test
-	//	public void testAddConsommation() throws Exception {
-	// Produit pdt1 = serviceProduit.getProduitId(1L);
-	// Produit pdt2 = serviceProduit.getProduitId(2L);
-	// Produit pdt3 = serviceProduit.getProduitId(3L);
-	// Produit pdt4 = serviceProduit.getProduitId(4L);
-	// Client cl1 = servicePersonne.getClientId(1L);
-	// Client cl2 = servicePersonne.getClientId(2L);
-	// Consommation csn1 = new Consommation(1, pdt1, cl1);
-	// Consommation csn2 = new Consommation(3, pdt1, cl1);
-	// Consommation csn3 = new Consommation(1, pdt2, cl1);
-	// Consommation csn4 = new Consommation(6, pdt3, cl1);
-	// Consommation csn5 = new Consommation(10, pdt4, cl2);
-	// serviceConso.addConsommation(csn1);
-	// serviceConso.addConsommation(csn2);
-	// serviceConso.addConsommation(csn3);
-	// serviceConso.addConsommation(csn4);
-	// serviceConso.addConsommation(csn5);
-	// }
+	@Test
+	public void testAddConsommation() throws Exception {
+		Produit pdt1 = serviceProduit.getProduitId(1L);
+		Produit pdt2 = serviceProduit.getProduitId(2L);
+		Produit pdt3 = serviceProduit.getProduitId(3L);
+		Produit pdt4 = serviceProduit.getProduitId(4L);
+		Client cl1 = servicePersonne.getClientId(1L);
+		Client cl2 = servicePersonne.getClientId(2L);
+		Consommation csn1 = new Consommation(1, pdt1, cl1);
+		Consommation csn2 = new Consommation(3, pdt1, cl1);
+		Consommation csn3 = new Consommation(1, pdt2, cl1);
+		Consommation csn4 = new Consommation(6, pdt3, cl1);
+		Consommation csn5 = new Consommation(10, pdt4, cl2);
+		serviceConso.addConsommation(csn1);
+		serviceConso.addConsommation(csn2);
+		serviceConso.addConsommation(csn3);
+		serviceConso.addConsommation(csn4);
+		serviceConso.addConsommation(csn5);
+	}
 
 	// @Test
 	// public void testGetConsommationId() throws Exception {
