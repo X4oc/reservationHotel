@@ -2,6 +2,8 @@ package com.groupe2.reservationHotel.servicePersonne;
 
 import java.util.List;
 
+import com.groupe2.reservationHotel.entities.Client;
+import com.groupe2.reservationHotel.entities.Employe;
 import com.groupe2.reservationHotel.entities.Personne;
 import com.groupe2.reservationHotel.exceptions.RechercheHotelException;
 import com.groupe2.reservationHotel.exceptions.RecherchePersonneException;
@@ -14,17 +16,25 @@ import com.groupe2.reservationHotel.exceptions.RecherchePersonneException;
  */
 
 public interface IPersonneService {
-	
+
 	public Personne addPersonne(Personne p, Long idHotel) throws RechercheHotelException;
 
 	public Personne getPersonneId(Long idPersonne) throws RecherchePersonneException;
 
 	public List<Personne> getPersonne();
-	
+
 	public List<Personne> getPersonneByMc(String mc);
 
 	public Personne updatePersonne(Personne p);
 
 	public Personne deletePersonne(Long idPersonne) throws RecherchePersonneException;
+
+	public Client getClientId(Long idClient) throws Exception;
+
+	public List<Client> getClient();
+
+	public Employe getEmployeId(Long idEmploye) throws Exception;
+
+	public List<Employe> getEmploye();
 
 }

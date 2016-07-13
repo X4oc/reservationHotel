@@ -38,11 +38,11 @@ public class Client extends Personne {
 	 * ASSOCIATIONS
 	 */
 
-	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Reservation> reservation = new ArrayList<Reservation>();
+//	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+//	private List<Reservation> reservation = new ArrayList<Reservation>();
 
-	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Consommation> consommation = new ArrayList<Consommation>();
+//	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+//	private List<Consommation> consommation = new ArrayList<Consommation>();
 
 	/*
 	 * GETTERS ET SETTERS
@@ -72,21 +72,21 @@ public class Client extends Personne {
 		this.reduction = reduction;
 	}
 
-	public List<Reservation> getReservation() {
-		return reservation;
-	}
+//	public List<Reservation> getReservation() {
+//		return reservation;
+//	}
+//
+//	public void setReservation(List<Reservation> reservation) {
+//		this.reservation = reservation;
+//	}
 
-	public void setReservation(List<Reservation> reservation) {
-		this.reservation = reservation;
-	}
-
-	public List<Consommation> getConsommation() {
-		return consommation;
-	}
-
-	public void setConsommation(List<Consommation> consommation) {
-		this.consommation = consommation;
-	}
+//	public List<Consommation> getConsommation() {
+//		return consommation;
+//	}
+//
+//	public void setConsommation(List<Consommation> consommation) {
+//		this.consommation = consommation;
+//	}
 
 	/*
 	 * CONSTRUCTEURS

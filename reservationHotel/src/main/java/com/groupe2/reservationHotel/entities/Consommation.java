@@ -33,15 +33,15 @@ public class Consommation {
 	 */
 
 	@ManyToOne
-	@JoinColumn(name = "idProduit")
+	@JoinColumn(name = "produitId")
 	private Produit produit;
 
 	@ManyToOne
-	@JoinColumn(name = "idClient")
+	@JoinColumn(name = "clientId")
 	private Client client;
 	
 	@ManyToOne
-	@JoinColumn(name = "idReservation")
+	@JoinColumn(name = "reservationId")
 	private Reservation reservation;
 
 	/*

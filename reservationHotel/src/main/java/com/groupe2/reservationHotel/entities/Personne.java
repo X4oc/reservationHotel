@@ -25,6 +25,7 @@ import javax.persistence.OneToMany;
  * VERSION : 1.0
  */
 
+@SuppressWarnings("unused")
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "typePersonne", discriminatorType = DiscriminatorType.STRING)
@@ -50,7 +51,7 @@ public class Personne {
 	 */
 
 	@ManyToOne
-	@JoinColumn(name = "idHotel")
+	@JoinColumn(name = "hotelId")
 	private Hotel hotel;
 
 //	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
